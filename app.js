@@ -56,9 +56,6 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-<<<<<<< HEAD
 
 app.listen(3000);
 console.log("listening in port 3000");
-=======
->>>>>>> 9adc60808111056b6f42ace7dc9b18e49499938a

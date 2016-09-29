@@ -6,19 +6,11 @@ var options = {
 };
 
 var pgp = require('pg-promise')(options);
-<<<<<<< HEAD
 var connectionString = 'postgres://postgres:postgres@localhost:5432/datahub';
 var db = pgp(connectionString);
 
 function getAllMedia(req, res, next) {
   db.any('select * from ogrgeojson')
-=======
-var connectionString = 'postgres://postgres:postgres@localhost/datahub';
-var db = pgp(connectionString);
-
-function getAllMedia(req, res, next) {
-  db.any('select * from pups')
->>>>>>> 9adc60808111056b6f42ace7dc9b18e49499938a
     .then(function (data) {
       res.status(200)
         .json({
@@ -33,13 +25,8 @@ function getAllMedia(req, res, next) {
 }
 
 function getSingleMedia(req, res, next) {
-<<<<<<< HEAD
-  var pupID = parseStr(req.params.id);
+  var pupID = parseStr(req.params.);
   db.one('select * from ogrgeojson where ogc_fid = $1', pupID)
-=======
-  var pupID = parseInt(req.params.id);
-  db.one('select * from pups where id = $1', pupID)
->>>>>>> 9adc60808111056b6f42ace7dc9b18e49499938a
     .then(function (data) {
       res.status(200)
         .json({
@@ -109,9 +96,5 @@ module.exports = {
   getSingleMedia: getSingleMedia,
   createMedia: createMedia,
   updateMedia: updateMedia,
-<<<<<<< HEAD
   removeMedia: removeMedia
-=======
-  removeMedia: removePuppy
->>>>>>> 9adc60808111056b6f42ace7dc9b18e49499938a
 };
