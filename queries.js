@@ -10,6 +10,7 @@ var connectionString = 'postgres://postgres:postgres@localhost:5432/datahub';
 var db = pgp(connectionString);
 
 function getAllMedia(req, res, next) {
+  res.header("Content-Type",'application/json');
   db.any('select * from ogrgeojson')
     .then(function (data) {
       res.status(200)
@@ -25,7 +26,7 @@ function getAllMedia(req, res, next) {
 }
 
 function getSingleMedia(req, res, next) {
-  var pupID = parseStr(req.params.);
+  var pupID = parseStr(req.params.id);
   db.one('select * from ogrgeojson where ogc_fid = $1', pupID)
     .then(function (data) {
       res.status(200)
