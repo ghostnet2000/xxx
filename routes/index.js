@@ -5,7 +5,6 @@ var db = require('../queries');
 
 
 router.get('/api/media', db.getAllMedia);
-router.get('/api/medias/:id', db.getSingleMedia);
 router.get('/api/media/:id', db.getSingleMedia);
 router.post('/api/media', db.createMedia);
 router.put('/api/media/:id', db.updateMedia);
